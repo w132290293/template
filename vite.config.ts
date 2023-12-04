@@ -6,11 +6,13 @@ import { ElementPlusResolver, } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite'
 import removeConsole from "vite-plugin-remove-console";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 
 export default defineConfig({
   plugins: [
     vue(),
     removeConsole(),
+    vueJsx(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
       imports: [
@@ -57,7 +59,8 @@ export default defineConfig({
   base: '/wxy',
   server: {
     open: '/',
-    host: '192.168.0.151',
+    // host: '192.168.0.151',
+    host: '192.168.0.118',
     port: 8081,
     proxy: { // 跨域代理
       '/api': {

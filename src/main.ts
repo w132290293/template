@@ -12,9 +12,10 @@ const pinia = createPinia();
 pinia.use(piniaPersist)
 app.use(pinia)
 
-//
+//等待router挂载完毕
 app.use(router)
-app.mount('#app')
+router.isReady().then(() => app.mount('#app'))
+
 
 
 
