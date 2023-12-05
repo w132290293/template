@@ -14,7 +14,8 @@ const compModules = import.meta.glob(['@/view/**/*.vue', '!@/view/*.vue']);
 //生成路由
 const routes1 = Object.entries(pageModules).map(([pagePath, config]) => {
     const path = pagePath.replace('/src/view/', '').replace('/page.ts', '');
-    const compPath = pagePath.replace('page.ts', 'index.vue');
+    const pathArr = path.split('/');
+    const compPath = pagePath.replace('page.ts', pathArr[pathArr.length - 1] + '.vue');
 
     return {
         path: '/' + path,
@@ -23,7 +24,6 @@ const routes1 = Object.entries(pageModules).map(([pagePath, config]) => {
         ...config as Object,
     }
 });
-console.log(routes1);
 
 
 
@@ -47,11 +47,15 @@ function convertToTree(data: any, num = 1) {
         children: getChild(item)
     }));
 };
-const routes = convertToTree(routes1);
+
+//设置根路由
+const routes = [{
+    path: '/',
+    redirect: 'one', //重定向
+    children: convertToTree(routes1),
+}];
 console.log(routes);
-routes.push({
-    path: '/'
-})
+
 
 
 // 3. 创建路由实例并传递 `routes` 配置

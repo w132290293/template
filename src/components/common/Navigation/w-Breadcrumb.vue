@@ -14,9 +14,9 @@
 <script setup>
 /**
  * @separator  分隔符
- * @to  为true开启点击跳转 
+ * @to  开启关闭点击跳转 
  * 
- * 用法：路由设置meta:{title:'页面名称'}
+ * 路由设置meta:{title:'页面名称'}
  */
 
 import { useRoute } from "vue-router";
@@ -29,7 +29,7 @@ defineProps({
     },
     to: {
         type: Boolean,
-        default: false
+        default: true
     }
 });
 
@@ -43,4 +43,5 @@ watch(() => route.path, () => {
 }, { immediate: true });
 
 </script>
+<style lang="scss" scoped></style>
 

@@ -17,15 +17,15 @@
 
 
 @font-face {
-  font-family: 'demo';
-  src: url('');
+  font-family: 'MiSans';
+  src: url('@/assets/font/MiSans-Regular.ttf');
 }
 
 * {
   padding: 0;
   margin: 0;
   text-decoration: none;
-  font-family: 'demo';
+  font-family: 'MiSans';
 }
 
 html,
@@ -35,7 +35,7 @@ body {
   color: #333;
 }
 
-#app{
+#app {
   width: 100%;
   height: 100%;
 }

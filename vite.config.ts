@@ -7,21 +7,25 @@ import Components from 'unplugin-vue-components/vite'
 import removeConsole from "vite-plugin-remove-console";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig({
   plugins: [
     vue(),
     removeConsole(),
     vueJsx(),
+    // ViteImageOptimizer(), //压缩图片需要sharpjs: npm install sharp --save-dev
     AutoImport({
       resolvers: [ElementPlusResolver()],
       imports: [
         // 预设
         'vue',
-        "vue-router",
+        'vue-router',
         'pinia',
         {
+          'dayjs': [['default', 'dayjs']], // import { default as dayjs } from 'dayjs',
           // 'vue-router': ['createRouter'],     // 导入指定的api
+
           /* 自定义模块 */
           '@/api/index.ts': [['*', 'api']],        // 导入指定文件下的api，并重命名
           '@/stores/index.ts': ['useStore'],        // 导入指定文件下的指定api
@@ -42,7 +46,7 @@ export default defineConfig({
       // 指定图标文件夹，绝对路径（NODE代码）
       iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
       symbolId: 'icon-[dir]-[name]',
-    })
+    }),
   ],
   css: {
     preprocessorOptions: {

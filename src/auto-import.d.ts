@@ -7,6 +7,7 @@ export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const ElMessage: typeof import('element-plus/es')['ElMessage']
+  const a: typeof import('dayjs')['a']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const api: typeof import('@/api/index')
   const computed: typeof import('vue')['computed']
@@ -14,6 +15,10 @@ declare global {
   const createPinia: typeof import('pinia')['createPinia']
   const createRouter: typeof import('vue-router')['createRouter']
   const customRef: typeof import('vue')['customRef']
+  const d: typeof import('dayjs')['d']
+  const dayjs: typeof import('dayjs')['default']
+  const dayjs/locale/zh-cn: typeof import('dayjs')['dayjs/locale/zh-cn']
+  const default: typeof import('dayjs/locale/zh-cn')['default']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
   const defineStore: typeof import('pinia')['defineStore']
@@ -28,6 +33,7 @@ declare global {
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
+  const j: typeof import('dayjs')['j']
   const login: typeof import('./api/index')['login']
   const mapActions: typeof import('pinia')['mapActions']
   const mapGetters: typeof import('pinia')['mapGetters']
@@ -56,6 +62,7 @@ declare global {
   const readonly: typeof import('vue')['readonly']
   const ref: typeof import('vue')['ref']
   const resolveComponent: typeof import('vue')['resolveComponent']
+  const s: typeof import('dayjs')['s']
   const setActivePinia: typeof import('pinia')['setActivePinia']
   const setMapStoreSuffix: typeof import('pinia')['setMapStoreSuffix']
   const shallowReactive: typeof import('vue')['shallowReactive']
@@ -80,6 +87,7 @@ declare global {
   const watchEffect: typeof import('vue')['watchEffect']
   const watchPostEffect: typeof import('vue')['watchPostEffect']
   const watchSyncEffect: typeof import('vue')['watchSyncEffect']
+  const y: typeof import('dayjs')['y']
 }
 // for type re-export
 declare global {
