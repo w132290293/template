@@ -22,7 +22,7 @@ const routes1 = Object.entries(pageModules).map(([pagePath, config]) => {
         name: path.replace(/\//g, '-'),
         component: compModules[compPath],
         ...config as object,
-    }
+    };
 });
 
 
@@ -45,7 +45,15 @@ function convertToTree(data: any, num = 1) {
     return data?.filter((item: any) => item.name.split('-').length <= num).map((item: any) => ({
         ...item,
         children: getChild(item)
-    }));
+    })).sort((a: any, b: any) => {
+        if (a.meta?.index < b.meta?.index) {
+            return -1;
+        }
+        if (a.meta?.index > b.meta?.index) {
+            return 1;
+        }
+        return 0;
+    });
 }
 
 //设置根路由
