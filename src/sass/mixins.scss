@@ -1,6 +1,10 @@
-@mixin _demo() {
-    border: solid 1px #000;
-}
+$_red: #F56C6C;
+$_green: #67C23A;
+$_blue: #409EFF;
+$_gray: #909399;
+$_solid: 1px solid var(--el-border-color);
+$_dashed: 2px dashed var(--el-border-color);
+$_shadow: var(--el-box-shadow-lighter);
 
 //滚动条样式
 @mixin _scroll($w: 8px, $c: #fff) {

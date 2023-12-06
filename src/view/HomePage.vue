@@ -46,15 +46,15 @@ function getIncluce(data: any) {
     let arr: any = [];
     data.children.forEach((item: any) => {
         if (item.meta.keepAlive) {
-            arr.push(item.name.split('-')?.pop())
-        };
+            arr.push(item.name.split('-')?.pop());
+        }
         if (item.children.length) {
-            arr = arr.concat(getIncluce(item))
-        };
+            arr = arr.concat(getIncluce(item));
+        }
     });
 
-    return arr
-};
+    return arr;
+}
 const isInclude = getIncluce(route.matched[0]);
 
 
@@ -72,6 +72,7 @@ const isInclude = getIncluce(route.matched[0]);
         height: 48px;
         width: 100%;
         display: flex;
+        box-shadow: $_shadow;
     }
 
     >main {

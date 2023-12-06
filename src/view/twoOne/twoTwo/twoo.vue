@@ -34,9 +34,10 @@ const checked5 = ref(false)
 const checked6 = ref(false)
 </script>
 
-<style scoped>
-.box{
+<style scoped lang="scss">
+.box {
     width: 500px;
     height: 300px;
+    border: $_dashed;
 }
 </style>

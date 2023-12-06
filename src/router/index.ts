@@ -21,7 +21,7 @@ const routes1 = Object.entries(pageModules).map(([pagePath, config]) => {
         path: '/' + path,
         name: path.replace(/\//g, '-'),
         component: compModules[compPath],
-        ...config as Object,
+        ...config as object,
     }
 });
 
@@ -40,13 +40,13 @@ function convertToTree(data: any, num = 1) {
             ...item,
             children: getChild(item)
         }));
-    };
+    }
 
     return data?.filter((item: any) => item.name.split('-').length <= num).map((item: any) => ({
         ...item,
         children: getChild(item)
     }));
-};
+}
 
 //设置根路由
 const routes = [{

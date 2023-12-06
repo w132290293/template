@@ -5,4 +5,4 @@ export default {
     },
     // redirect: '/', //重定向
     // alias: '/home', //别名
-}
+};

@@ -1,9 +1,9 @@
 import axios from "axios";
+import router from '@/routerHook.ts';
 // import Qs from 'qs';
 // import { ElMessage } from 'element-plus'
-import router from '@/routerHook.ts';
 
-let axios_instance = axios.create({
+const axios_instance = axios.create({
     baseURL: import.meta.env.VITE_BASE_API,
     timeout: 1000 * 60 * 5,
     // transformRequest: [function (data) {
@@ -39,26 +39,25 @@ axios_instance.interceptors.request.use(
 //响应拦截
 axios_instance.interceptors.response.use(
     function (response: any) {
-        let data = response.data;
+        const data = response.data;
 
         if (data.success) {
             return data;
-        } else {
-            if (data.errors) {
-                ElMessage({
-                    message: data.errors.reason,
-                    showClose: true,
-                    type: 'error',
-                })
-                return Promise.reject(data.errors)
-            }
-            return data
         }
+        if (data.errors) {
+            ElMessage({
+                message: data.errors.reason,
+                showClose: true,
+                type: 'error',
+            });
+            return Promise.reject(data.errors);
+        }
+        return data;
     },
     function (error: any) {
         if (error.response.status === 401) {
             router.push({ name: 'login' })
-        };
+        }
         ElMessage({
             message: '请求失败',
             showClose: true,
@@ -76,18 +75,19 @@ const get = (url: string, data = {}) => {
         url: url,
         method: 'get',
         params: data
-    })
-}
+    });
+};
 const post = (url: string, data = {}) => {
     return axios_instance({
         url: url,
         method: 'post',
         data: data
-    })
-}
+    });
+};
 
 
 export {
     get,
     post,
-}
+
+};

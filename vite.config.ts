@@ -34,6 +34,9 @@ export default defineConfig({
       dirs: ['./src/api'],
       dts: './src/auto-import.d.ts',
       include: [/\.[tj]sx?$/, /\.vue$/], // 匹配的文件，也就是哪些后缀的文件需要自动引入
+      eslintrc: {
+        enabled: true, // .eslintrc-auto-import.json
+      },
     }),
     Components({
       dirs: ['src/components'], // 配置需要默认导入的自定义组件文件夹，该文件夹下的所有组件都会自动 import
@@ -62,7 +65,7 @@ export default defineConfig({
   },
   base: '/wxy',
   server: {
-    open: '/',
+    // open: '/',
     // host: '192.168.0.151',
     host: '192.168.0.118',
     port: 8081,
