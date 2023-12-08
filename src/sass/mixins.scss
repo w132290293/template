@@ -54,3 +54,22 @@ $_shadow: var(--el-box-shadow-lighter);
         -webkit-box-orient: vertical;
     }
 }
+
+
+//动画-公转  $num:总数; $width:旋转半径; $deg:角度;
+//使用:每一项-animation: revolution0 30s linear infinite; 大圈-transform: rotateX(-77deg);
+@mixin _revolution($num, $width: 300px, $deg: 77deg) {
+    $d: calc(360deg / $num);
+
+    @for $index from 0 through $num - 1 {
+        @keyframes revolution#{$index} {
+            @for $i from 0 through $num {
+                $dd: calc($d * $i + $d * $index);
+
+                #{calc(100% / $num) * $i} {
+                    transform: rotate($dd) translateX($width) rotate(-$dd) rotateX($deg);
+                }
+            }
+        }
+    }
+}

@@ -12,7 +12,6 @@ const value1 = ref('');
 console.log(dayjs(new Date).format('YYYY-MM-DD(dddd) HH:mm:ss'));
 
 
-
 </script>
 
 <style scoped></style>
