@@ -35,7 +35,7 @@ function convertToTree(data: any, num = 1) {
 
         return data.filter((item: any) => {
             const arr = item.name.split('-');
-            return (arr.length === oldArr.length + 1) && (arr[oldArr.length - 1] === oldArr[oldArr.length - 1])
+            return arr.length === oldArr.length + 1 && arr[oldArr.length - 1] === oldArr[oldArr.length - 1]
         }).map((item: any) => ({
             ...item,
             children: getChild(item)
@@ -59,7 +59,7 @@ function convertToTree(data: any, num = 1) {
 //设置根路由
 const routes = [{
     path: '/',
-    redirect: 'one', //重定向
+    redirect: 'oneOne', //重定向
     children: convertToTree(routes1),
 }];
 console.log(routes);

@@ -4,6 +4,6 @@ export default {
         svg: 'vue',
         index: 1
     },
-    redirect: '/two/twoo', //重定向
+    redirect: '/twoOne/twoTwo', //重定向
     // alias: '/home', //别名
 }

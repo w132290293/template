@@ -20,15 +20,15 @@ export default defineComponent({
     },
     color: {
       type: String,
-      default: "#fff",
+      default: "inherit", // 继承
     },
     width: {
       type: String,
-      default: '24px'
+      default: 'inherit'
     },
     height: {
       type: String,
-      default: '24px'
+      default: 'inherit'
     }
   },
   setup(props) {

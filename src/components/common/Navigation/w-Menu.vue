@@ -3,7 +3,7 @@
   <el-menu :default-active="active" unique-opened :collapse="collapse">
     <slot name="header"></slot>
 
-    <template v-for="item in route.matched[index].children">
+    <template v-for="item in route.matched[index]?.children">
       <menuItem v-if="!item.meta?.hidden" :item="item">
       </menuItem>
     </template>
@@ -111,29 +111,4 @@ const menuItem = defineComponent({
   flex-direction: column;
   user-select: none;
 }
-
-// ::v-deep .el-menu-item {
-//   display: flex;
-//   // border-radius: 6px;
-//   height: 48px;
-//   margin: 4px 0;
-//   // color: #A3A4A9;
-//   overflow: hidden;
-//   font-size: 16px;
-//   font-weight: 300;
-// }
-
-// // ::v-deep .el-menu--inline {
-// //   padding: 0 24px;
-// //   box-sizing: border-box;
-// // }
-
-// ::v-deep .el-menu-item.is-active {
-//   // background: #414D60;
-//   // color: #fff !important;
-// }
-
-// ::v-deep .el-sub-menu__title {
-//   font-size: 18px;
-// }
 </style>

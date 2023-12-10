@@ -1,12 +1,12 @@
-import { get, post } from '@/utils/request'
+import { get, post } from '@/utils/request';
 
-const login = (data: Object) => {
-    return post('ndsvc/user/login', data)
-}
+const login = (data: object) => {
+    return post('ndsvc/user/login', data);
+};
 
-const getUserInfo = (data: Object) => {
-    return post('user/info', data)
-}
+const getUserInfo = (data: object) => {
+    return post('user/info', data);
+};
 
 
 
@@ -15,5 +15,5 @@ const getUserInfo = (data: Object) => {
 export {
     login,
     getUserInfo,
-    
-}
+
+};
